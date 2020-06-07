@@ -6,17 +6,17 @@ public class BubbleSort {
 
     //a[idx1]와 a[idx2]의 값을 바꿈
     static void swap(int[] a, int idx1, int idx2) {
-        int t = a[idx1]; //임시 변수를 만들어서 a[idx1]값을 넣어놓음
-        a[idx1] = a[idx2];
-        a[idx2] = t;
+        int t = a[idx1]; //임시 변수를 만들어서 더 큰 수를 넣어놓음
+        a[idx1] = a[idx2]; //원래의 큰 수 자리에 작은수를 넣고
+        a[idx2] = t; //작은 수 자리였던 값에 큰 수를 넣음
     }
 
     //버블정렬
     static void bubbleSort(int[] a, int n) {
         for (int i = 0; i < n - 1; i++) {
             for (int j = n - 1; j > i; j--) {
-                if (a[j - 1] > a[j])
-                    swap(a, j - 1, j);
+                if (a[j - 1] > a[j]) //앞의 수가 더 크다면
+                    swap(a, j - 1, j);//위치변경
             }
         }
     }
